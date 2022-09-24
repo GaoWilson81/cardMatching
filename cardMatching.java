@@ -19,7 +19,7 @@ public class cardMatching {
         System.out.println("Welcome to cardGame.");
         System.out.println("====================");
         while (valid) {
-            System.out.print("Please enter the difficulty you would like (easy, medium hard): ");
+            System.out.print("Please enter the difficulty you would like (easy, medium, hard): ");
             difficulty = input.nextLine().toLowerCase();
             System.out.println(difficulty);
             if (!difficulty.equals("easy") && !difficulty.equals("medium") && !difficulty.equals("hard")) {
