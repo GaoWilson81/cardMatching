@@ -1,5 +1,5 @@
 import java.util.Scanner; //need this to ask for how many rows and columns
-import java.util.ArrayList; //
+import java.util.ArrayList;
 import java.util.Random; //need this to randomize the cards
 
 public class cardMatching {
@@ -46,16 +46,8 @@ public class cardMatching {
     public static void showBoard() {
         difficulty();
         for(int i = 0; i < row; i++) {
-            if (row > 9) {
-                System.out.println("Please make sure the number of rows doesn't exceed 9"); //breaks if row exceeds 9
-                break;
-            }
             System.out.print("|");
             for(int j = 0; j < column; j++) {
-                if (column > 9) {
-                    System.out.println("Please make sure the number of columns doesn't exceed 9");
-                    break;
-                }
                 System.out.print(board[i][j]); //prints value in between |-|
                 System.out.print("|");
             }
