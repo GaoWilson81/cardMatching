@@ -76,7 +76,7 @@ public class cardMatching {
         if (difficulty.equals("medium")) {
             while (b < 2) {
                 for (int i = 0; i < row * column / 2; i++) {
-                    newCard.add(lowerCaseLetters[i] + "");
+                    newCard.add(lowerCaseLetters[i] + ""); // + "" converts it to String
                 }
                 b++;
             }
