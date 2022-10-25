@@ -1,5 +1,5 @@
 import java.util.Scanner; //need this to ask for how many rows and columns
-import java.util.ArrayList;
+import java.util.ArrayList; //
 import java.util.Random; //need this to randomize the cards
 
 public class cardMatching {
@@ -76,7 +76,7 @@ public class cardMatching {
         if (difficulty.equals("medium")) {
             while (b < 2) {
                 for (int i = 0; i < row * column / 2; i++) {
-                    newCard.add(lowerCaseLetters[i] + ""); // + "" converts it to String
+                    newCard.add(lowerCaseLetters[i] + "");
                 }
                 b++;
             }
@@ -117,9 +117,21 @@ public class cardMatching {
         while(looping) {
             if (!gameOver()) {
                 System.out.println("Which row?");
-                int newRow = input.nextInt();
+                int newRow = 0;
+                if (input.hasNextInt()) {
+                    newRow = input.nextInt();
+                } else {
+                    System.out.println("Leaving...");
+                    break;
+                }
                 System.out.println("Which column?");
-                int newColumn = input.nextInt();
+                int newColumn = 0;
+                if (input.hasNextInt()) {
+                    newColumn = input.nextInt();
+                } else {
+                    System.out.println("Leaving...");
+                    break;
+                }
 
                 if (newRow <= 0 || newColumn <= 0) {
                     System.out.println("Make sure the row/column is at least one or greater");
@@ -138,10 +150,22 @@ public class cardMatching {
                     showBoard();
                 }
                 //repeats which row/column input because you need two input to match
-                System.out.println("Once again, I shall ask, which row? ");
-                int newRow2 = input.nextInt();
-                System.out.println("And...which column? ");
-                int newColumn2 = input.nextInt();
+                System.out.println("Once again, I shall ask, which row?");
+                int newRow2 = 0;
+                if (input.hasNextInt()) {
+                    newRow2 = input.nextInt();
+                } else {
+                    System.out.println("Leaving...");
+                    break;
+                }
+                System.out.println("And... column?");
+                int newColumn2 = 0;
+                if (input.hasNextInt()) {
+                    newColumn2 = input.nextInt();
+                } else {
+                    System.out.println("Leaving...");
+                    break;
+                }
 
                 if (newRow2 <= 0 || newColumn2 <= 0) {
                     System.out.println("Make sure the row/column is at least one or greater");
@@ -181,6 +205,7 @@ public class cardMatching {
 
         while(looping) {
             System.out.println("Type \"new\" for new game, or \"quit\" to quit game.");
+            System.out.println("While in game, you may quit by entering anything that's not a number. For example: q.");
             String create = input.nextLine();
 
             if (create.equals("quit")) {
@@ -205,7 +230,6 @@ public class cardMatching {
     }
 
     public static void main(String[] args) {
-
         createGame();
     }
 }
