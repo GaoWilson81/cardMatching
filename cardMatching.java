@@ -1,12 +1,8 @@
-import java.util.Scanner; //need this to ask for how many rows and columns
-import java.util.ArrayList; //
-import java.util.Random; //need this to randomize the cards
+import java.util.Scanner; 
+import java.util.ArrayList;
+import java.util.Random;
 
 public class cardMatching {
-
-    //Since there will be rows and columns, 2D array will be used
-    //It could be an int or String type since the cards can contain either one
-
     protected static String difficulty;
     protected static int row = 0;
     protected static int column = 0;
